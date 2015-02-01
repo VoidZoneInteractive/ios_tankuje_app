@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-Wf-fuh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-Wf-fuh">
+                                <rect key="frame" x="16" y="32" width="568" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dhf-Wf-fuh" secondAttribute="height" multiplier="1:1" id="VBw-Rb-2eh"/>
+                                    <constraint firstAttribute="width" secondItem="dhf-Wf-fuh" secondAttribute="height" multiplier="1:1" id="rHe-TN-7bo"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VBw-Rb-2eh"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="E6Y-68-YwH" kind="embed" id="vuC-u9-1cf"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dhf-Wf-fuh" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leadingMargin" id="Lsy-Vr-U7s"/>
+                            <constraint firstItem="dhf-Wf-fuh" firstAttribute="trailing" secondItem="RdJ-ZC-HXJ" secondAttribute="trailingMargin" id="Oq1-Dv-IRF"/>
+                            <constraint firstItem="zDs-X0-CSM" firstAttribute="top" secondItem="dhf-Wf-fuh" secondAttribute="bottom" id="Sje-JG-Gj8"/>
+                            <constraint firstItem="zDs-X0-CSM" firstAttribute="top" secondItem="dhf-Wf-fuh" secondAttribute="bottom" id="oJw-cB-rs4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhf-Wf-fuh" secondAttribute="trailing" id="r9W-xY-ICE"/>
+                            <constraint firstItem="dhf-Wf-fuh" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leadingMargin" id="t4W-Ce-RcN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lsy-Vr-U7s"/>
+                                <exclude reference="r9W-xY-ICE"/>
+                                <exclude reference="oJw-cB-rs4"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -39,7 +65,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pt2-ZZ-8nn"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MPN-SW-Cvq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

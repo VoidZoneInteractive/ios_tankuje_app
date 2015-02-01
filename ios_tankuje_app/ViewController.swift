@@ -10,7 +10,7 @@ class ViewController: UIViewController {
             longitude: 151.20, zoom: 6)
         var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
-        mapContainerView = mapView
+        self.view = mapView
         
         var marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
