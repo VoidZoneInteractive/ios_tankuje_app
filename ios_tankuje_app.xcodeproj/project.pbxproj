@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B85FA9B41A7ED5CE00147481 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FA9B31A7ED5CE00147481 /* Map.swift */; };
 		B86E33AA1A7EB518006DE975 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E33A91A7EB518006DE975 /* GoogleMaps.framework */; };
 		B86E33AB1A7EB518006DE975 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E33A91A7EB518006DE975 /* GoogleMaps.framework */; };
 		B86E33AD1A7EB5F6006DE975 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E33AC1A7EB5F6006DE975 /* AVFoundation.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B85FA9B31A7ED5CE00147481 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B86E33A91A7EB518006DE975 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		B86E33AC1A7EB5F6006DE975 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B86E33AE1A7EB5FC006DE975 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,7 @@
 			children = (
 				B8D190B81A7EA1170063C36C /* AppDelegate.swift */,
 				B8D190BD1A7EA1170063C36C /* ViewController.swift */,
+				B85FA9B31A7ED5CE00147481 /* Map.swift */,
 				B8D190BF1A7EA1170063C36C /* Main.storyboard */,
 				B8D190C21A7EA1170063C36C /* Images.xcassets */,
 				B8D190C41A7EA1170063C36C /* LaunchScreen.xib */,
@@ -295,6 +298,7 @@
 			files = (
 				B8D190BE1A7EA1170063C36C /* ViewController.swift in Sources */,
 				B8D190BC1A7EA1170063C36C /* ios_tankuje_app.xcdatamodeld in Sources */,
+				B85FA9B41A7ED5CE00147481 /* Map.swift in Sources */,
 				B8D190B91A7EA1170063C36C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

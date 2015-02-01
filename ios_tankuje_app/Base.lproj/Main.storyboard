@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zDs-X0-CSM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RdJ-ZC-HXJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-Wf-fuh">
-                                <rect key="frame" x="16" y="32" width="568" height="568"/>
+                                <rect key="frame" x="0.0" y="200" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dhf-Wf-fuh" secondAttribute="height" multiplier="1:1" id="VBw-Rb-2eh"/>
                                     <constraint firstAttribute="width" secondItem="dhf-Wf-fuh" secondAttribute="height" multiplier="1:1" id="rHe-TN-7bo"/>
@@ -36,9 +36,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dhf-Wf-fuh" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leading" id="4Ca-WV-xPt"/>
                             <constraint firstItem="dhf-Wf-fuh" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leadingMargin" id="Lsy-Vr-U7s"/>
                             <constraint firstItem="dhf-Wf-fuh" firstAttribute="trailing" secondItem="RdJ-ZC-HXJ" secondAttribute="trailingMargin" id="Oq1-Dv-IRF"/>
                             <constraint firstItem="zDs-X0-CSM" firstAttribute="top" secondItem="dhf-Wf-fuh" secondAttribute="bottom" id="Sje-JG-Gj8"/>
+                            <constraint firstAttribute="trailing" secondItem="dhf-Wf-fuh" secondAttribute="trailing" id="WsX-GD-pCn"/>
                             <constraint firstItem="zDs-X0-CSM" firstAttribute="top" secondItem="dhf-Wf-fuh" secondAttribute="bottom" id="oJw-cB-rs4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dhf-Wf-fuh" secondAttribute="trailing" id="r9W-xY-ICE"/>
                             <constraint firstItem="dhf-Wf-fuh" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leadingMargin" id="t4W-Ce-RcN"/>
@@ -46,11 +48,15 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Lsy-Vr-U7s"/>
+                                <exclude reference="Oq1-Dv-IRF"/>
                                 <exclude reference="r9W-xY-ICE"/>
+                                <exclude reference="t4W-Ce-RcN"/>
                                 <exclude reference="oJw-cB-rs4"/>
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="500"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,15 +71,17 @@
                         <viewControllerLayoutGuide type="bottom" id="pt2-ZZ-8nn"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MPN-SW-Cvq">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="100" height="100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ail-T4-ghC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="515"/>
+            <point key="canvasLocation" x="723" y="515"/>
         </scene>
     </scenes>
 </document>
