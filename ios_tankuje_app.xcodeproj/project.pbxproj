@@ -24,13 +24,20 @@
 		B86E33C31A7EB660006DE975 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86E33C21A7EB660006DE975 /* SystemConfiguration.framework */; };
 		B86E33CA1A7EBC25006DE975 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B86E33C91A7EBC25006DE975 /* GoogleMaps.bundle */; };
 		B86E33CB1A7EBC25006DE975 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B86E33C91A7EBC25006DE975 /* GoogleMaps.bundle */; };
+		B871EE1C1A8001BC008C539C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871EE1B1A8001BC008C539C /* SwiftyJSON.swift */; };
+		B87CEEF61A87AE0B00E3DEA0 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B87CEEF51A87AE0B00E3DEA0 /* bg.png */; };
+		B8C027E51A81806B003BAB3F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C027E31A81806B003BAB3F /* logo.png */; };
+		B8C027E61A81806B003BAB3F /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = B8C027E41A81806B003BAB3F /* logo.svg */; };
+		B8C027E91A818715003BAB3F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C027E81A818715003BAB3F /* MainViewController.swift */; };
 		B8D190B91A7EA1170063C36C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D190B81A7EA1170063C36C /* AppDelegate.swift */; };
 		B8D190BC1A7EA1170063C36C /* ios_tankuje_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8D190BA1A7EA1170063C36C /* ios_tankuje_app.xcdatamodeld */; };
-		B8D190BE1A7EA1170063C36C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D190BD1A7EA1170063C36C /* ViewController.swift */; };
 		B8D190C11A7EA1170063C36C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D190BF1A7EA1170063C36C /* Main.storyboard */; };
 		B8D190C31A7EA1170063C36C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D190C21A7EA1170063C36C /* Images.xcassets */; };
 		B8D190C61A7EA1170063C36C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D190C41A7EA1170063C36C /* LaunchScreen.xib */; };
 		B8D190D21A7EA1170063C36C /* ios_tankuje_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D190D11A7EA1170063C36C /* ios_tankuje_appTests.swift */; };
+		B8DDA4E01A896A1700344429 /* orlen.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DDA4DF1A896A1700344429 /* orlen.png */; };
+		B8DDA4E31A896DA000344429 /* bp.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DDA4E11A896DA000344429 /* bp.png */; };
+		B8DDA4E41A896DA000344429 /* lotos.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DDA4E21A896DA000344429 /* lotos.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,17 +68,42 @@
 		B86E33C41A7EBAB7006DE975 /* ios_tankuje_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios_tankuje_app-Bridging-Header.h"; sourceTree = "<group>"; };
 		B86E33C51A7EBAB7006DE975 /* ios_tankuje_appTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios_tankuje_appTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B86E33C91A7EBC25006DE975 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		B871EE1B1A8001BC008C539C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B87CEEF51A87AE0B00E3DEA0 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		B8C027E31A81806B003BAB3F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		B8C027E41A81806B003BAB3F /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = logo.svg; sourceTree = "<group>"; };
+		B8C027E81A818715003BAB3F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B8D190B31A7EA1170063C36C /* ios_tankuje_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_tankuje_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D190B71A7EA1170063C36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D190B81A7EA1170063C36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D190BB1A7EA1170063C36C /* ios_tankuje_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_tankuje_app.xcdatamodel; sourceTree = "<group>"; };
-		B8D190BD1A7EA1170063C36C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8D190C01A7EA1170063C36C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8D190C21A7EA1170063C36C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B8D190C51A7EA1170063C36C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B8D190CB1A7EA1170063C36C /* ios_tankuje_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_tankuje_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D190D01A7EA1170063C36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D190D11A7EA1170063C36C /* ios_tankuje_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_tankuje_appTests.swift; sourceTree = "<group>"; };
+		B8DDA4CC1A87F94B00344429 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		B8DDA4CD1A87F94B00344429 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4CE1A87F94B00344429 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		B8DDA4CF1A87F94B00344429 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D01A87F94B00344429 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		B8DDA4D11A87F94B00344429 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D21A87F94B00344429 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		B8DDA4D31A87F94B00344429 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D41A87F94B00344429 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D51A87F94B00344429 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		B8DDA4D61A87F94B00344429 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D71A87F94B00344429 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		B8DDA4D81A87F94B00344429 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4D91A87F94B00344429 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		B8DDA4DA1A87F94B00344429 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		B8DDA4DB1A87F94B00344429 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4DC1A87F94B00344429 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		B8DDA4DD1A87F94B00344429 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B8DDA4DF1A896A1700344429 /* orlen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orlen.png; sourceTree = "<group>"; };
+		B8DDA4E11A896DA000344429 /* bp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bp.png; sourceTree = "<group>"; };
+		B8DDA4E21A896DA000344429 /* lotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lotos.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +159,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B8C027E71A8180C6003BAB3F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B87CEEF51A87AE0B00E3DEA0 /* bg.png */,
+				B8C027E41A81806B003BAB3F /* logo.svg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		B8D190AA1A7EA1170063C36C = {
 			isa = PBXGroup;
 			children = (
+				B8DDA4DE1A896A1700344429 /* oilstation_logo */,
+				B8DDA4CB1A87F93700344429 /* Fonts */,
+				B8C027E31A81806B003BAB3F /* logo.png */,
+				B8C027E71A8180C6003BAB3F /* Assets */,
 				B86E33CF1A7EC287006DE975 /* Frameworks */,
 				B8D190B51A7EA1170063C36C /* ios_tankuje_app */,
 				B8D190CE1A7EA1170063C36C /* ios_tankuje_appTests */,
@@ -150,7 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				B8D190B81A7EA1170063C36C /* AppDelegate.swift */,
-				B8D190BD1A7EA1170063C36C /* ViewController.swift */,
+				B871EE1B1A8001BC008C539C /* SwiftyJSON.swift */,
+				B8C027E81A818715003BAB3F /* MainViewController.swift */,
 				B85FA9B31A7ED5CE00147481 /* Map.swift */,
 				B8D190BF1A7EA1170063C36C /* Main.storyboard */,
 				B8D190C21A7EA1170063C36C /* Images.xcassets */,
@@ -186,6 +232,41 @@
 				B8D190D01A7EA1170063C36C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8DDA4CB1A87F93700344429 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDA4CC1A87F94B00344429 /* Lato-Black.ttf */,
+				B8DDA4CD1A87F94B00344429 /* Lato-BlackItalic.ttf */,
+				B8DDA4CE1A87F94B00344429 /* Lato-Bold.ttf */,
+				B8DDA4CF1A87F94B00344429 /* Lato-BoldItalic.ttf */,
+				B8DDA4D01A87F94B00344429 /* Lato-Hairline.ttf */,
+				B8DDA4D11A87F94B00344429 /* Lato-HairlineItalic.ttf */,
+				B8DDA4D21A87F94B00344429 /* Lato-Heavy.ttf */,
+				B8DDA4D31A87F94B00344429 /* Lato-HeavyItalic.ttf */,
+				B8DDA4D41A87F94B00344429 /* Lato-Italic.ttf */,
+				B8DDA4D51A87F94B00344429 /* Lato-Light.ttf */,
+				B8DDA4D61A87F94B00344429 /* Lato-LightItalic.ttf */,
+				B8DDA4D71A87F94B00344429 /* Lato-Medium.ttf */,
+				B8DDA4D81A87F94B00344429 /* Lato-MediumItalic.ttf */,
+				B8DDA4D91A87F94B00344429 /* Lato-Regular.ttf */,
+				B8DDA4DA1A87F94B00344429 /* Lato-Semibold.ttf */,
+				B8DDA4DB1A87F94B00344429 /* Lato-SemiboldItalic.ttf */,
+				B8DDA4DC1A87F94B00344429 /* Lato-Thin.ttf */,
+				B8DDA4DD1A87F94B00344429 /* Lato-ThinItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		B8DDA4DE1A896A1700344429 /* oilstation_logo */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDA4E11A896DA000344429 /* bp.png */,
+				B8DDA4E21A896DA000344429 /* lotos.png */,
+				B8DDA4DF1A896A1700344429 /* orlen.png */,
+			);
+			path = oilstation_logo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +356,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D190C11A7EA1170063C36C /* Main.storyboard in Resources */,
+				B8DDA4E41A896DA000344429 /* lotos.png in Resources */,
+				B8C027E61A81806B003BAB3F /* logo.svg in Resources */,
+				B8DDA4E31A896DA000344429 /* bp.png in Resources */,
+				B8C027E51A81806B003BAB3F /* logo.png in Resources */,
 				B8D190C61A7EA1170063C36C /* LaunchScreen.xib in Resources */,
+				B8DDA4E01A896A1700344429 /* orlen.png in Resources */,
+				B87CEEF61A87AE0B00E3DEA0 /* bg.png in Resources */,
 				B8D190C31A7EA1170063C36C /* Images.xcassets in Resources */,
 				B86E33CA1A7EBC25006DE975 /* GoogleMaps.bundle in Resources */,
 			);
@@ -296,9 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D190BE1A7EA1170063C36C /* ViewController.swift in Sources */,
 				B8D190BC1A7EA1170063C36C /* ios_tankuje_app.xcdatamodeld in Sources */,
 				B85FA9B41A7ED5CE00147481 /* Map.swift in Sources */,
+				B8C027E91A818715003BAB3F /* MainViewController.swift in Sources */,
+				B871EE1C1A8001BC008C539C /* SwiftyJSON.swift in Sources */,
 				B8D190B91A7EA1170063C36C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +513,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -433,6 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios_tankuje_app/ios_tankuje_app-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -443,6 +534,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -451,6 +544,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios_tankuje_app/ios_tankuje_app-Bridging-Header.h";
 			};
 			name = Release;

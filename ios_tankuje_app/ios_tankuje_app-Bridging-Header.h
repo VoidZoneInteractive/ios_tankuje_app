@@ -3,3 +3,4 @@
 //
 
 #import <GoogleMaps/GoogleMaps.h>
+//#import </Volumes/VoidZone/Projects/iOS/ios_tankuje_app/Classes/UIImage+SVG.h>
