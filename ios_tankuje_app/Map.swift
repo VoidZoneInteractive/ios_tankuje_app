@@ -16,12 +16,21 @@ class Map {
     var mapView:GMSMapView
     
     init(mapView:GMSMapView) {
+        
         self.mapView = mapView
         self.mapView.myLocationEnabled = true
         var camera = GMSCameraPosition.cameraWithLatitude(52.413212,
             longitude: 16.903423, zoom: 14)
         
         self.mapView.moveCamera(GMSCameraUpdate.setCamera(camera))
+        
+        let url = NSURL(string: "http://tankuje.com/assets/marker?value=10.01&output=png")
+        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        
+        self.icon = UIImage(data: data!)!
+//        self.icon.alignmentRectInsets.bottom = 25
+        
+        self.icon = self.scaleImage(self.icon, size: CGSizeMake(50, 50))
     }
     
 //    convenience init() {
@@ -38,37 +47,49 @@ class Map {
         self.mapView.moveCamera(GMSCameraUpdate.setCamera(camera))
     }
     
-    func fetchMarkers() {
+    func fetchMarkers(session: NSURLSession) {
+        println(session.delegate)
         let url = NSURL(string: "http://tankuje.com/webservice")
+//        NSURLSession.sharedSession()
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) -> Void in
-            if error == nil {
-                var result = NSString(data: data, encoding:
-                    NSASCIIStringEncoding)!
-                let jsonData = result.dataUsingEncoding(NSUTF8StringEncoding)
-                
-                let json = JSON(data: jsonData!)
-                
-                for (key: String, subJson: JSON) in json {
-//                    println(subJson["lat"])
-                    self.addMarker(subJson["lat"].double!, lng: subJson["lng"].double!)
-                }
-            }
-        }
+        let request = NSMutableURLRequest(URL: url!)
+        request.addValue("", forHTTPHeaderField: "Accept-Encoding")
+        request.HTTPMethod = "POST"
+        
+        let task = session.downloadTaskWithRequest(request)
         
         task.resume()
     }
     
-    func addMarker(lat: Double, lng: Double) {
+    var icon: UIImage
+    
+    func addMarker(lat: Double, lng: Double, company_id: String) {
         var marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, lng)
+        marker.userData = company_id
+        marker.icon = self.icon
 //        marker.title = "Sydney"
 //        marker.snippet = "Australia"
         marker.map = self.mapView
-//        if let mylocation = self.mapHolder.myLocation {
-//            NSLog("User's location: %@", mylocation)
-//        } else {
-//            NSLog("User's location is unknown")
-//        }
+    }
+    
+    func scaleImage(originalImage: UIImage, size:CGSize) -> UIImage {
+    //avoid redundant drawing
+    if (CGSizeEqualToSize(originalImage.size, size)) {
+        return originalImage;
+    }
+    
+    //create drawing context
+    UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
+    
+    //draw
+    originalImage.drawInRect(CGRectMake(0.0, 0.0, size.width, size.height))
+    
+    //capture resultant image
+    let image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    //return image
+    return image;
     }
 }

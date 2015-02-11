@@ -68,6 +68,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DcQ-bN-u4O">
+                                <rect key="frame" x="0.0" y="84" width="300" height="2"/>
+                                <color key="tintColor" red="0.5450980392" green="0.66666666669999997" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHt-Xw-jn2" userLabel="Bottom Bar">
                                 <rect key="frame" x="0.0" y="350" width="300" height="150"/>
                                 <subviews>
@@ -103,14 +107,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DcQ-bN-u4O" secondAttribute="trailing" id="2Ap-kG-RT8"/>
                             <constraint firstItem="zDs-X0-CSM" firstAttribute="bottom" secondItem="dHt-Xw-jn2" secondAttribute="bottom" id="8Zh-3s-Cou"/>
                             <constraint firstAttribute="trailing" secondItem="JCk-W2-1eT" secondAttribute="trailing" id="8yM-2B-nSs"/>
                             <constraint firstAttribute="trailing" secondItem="epi-tX-MRR" secondAttribute="trailing" id="Ggw-7n-6fo"/>
                             <constraint firstItem="JCk-W2-1eT" firstAttribute="top" secondItem="zDs-X0-CSM" secondAttribute="bottom" id="GyH-0r-1Bw"/>
                             <constraint firstItem="epi-tX-MRR" firstAttribute="top" secondItem="SpX-Ut-kAd" secondAttribute="top" id="MeL-BM-rp4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JCk-W2-1eT" secondAttribute="trailing" id="T7C-sk-nBj"/>
+                            <constraint firstItem="DcQ-bN-u4O" firstAttribute="top" secondItem="epi-tX-MRR" secondAttribute="bottom" id="UdL-Pb-96B"/>
                             <constraint firstItem="JCk-W2-1eT" firstAttribute="top" secondItem="SpX-Ut-kAd" secondAttribute="bottom" id="XZo-Xu-EBA"/>
                             <constraint firstItem="JCk-W2-1eT" firstAttribute="top" secondItem="SpX-Ut-kAd" secondAttribute="top" id="XbM-IZ-Ulz"/>
+                            <constraint firstItem="DcQ-bN-u4O" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leading" id="bar-m6-oJw"/>
                             <constraint firstItem="JCk-W2-1eT" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leading" id="e8u-BR-uut"/>
                             <constraint firstItem="JCk-W2-1eT" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leading" id="enh-f8-w2i"/>
                             <constraint firstItem="epi-tX-MRR" firstAttribute="leading" secondItem="RdJ-ZC-HXJ" secondAttribute="leading" id="evx-ug-McT"/>
@@ -142,6 +149,7 @@
                         <outlet property="navBar" destination="epi-tX-MRR" id="haF-iy-akh"/>
                         <outlet property="navitem" destination="Swu-ch-iKX" id="8aM-xO-tib"/>
                         <outlet property="oilstationImage" destination="luu-zI-F1X" id="PP4-JC-4FI"/>
+                        <outlet property="progress" destination="DcQ-bN-u4O" id="sya-Tf-AnM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

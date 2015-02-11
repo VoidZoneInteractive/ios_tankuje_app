@@ -7,13 +7,75 @@
 //
 
 import Foundation
+import UIKit
 
-class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate,NSURLSessionDelegate,
+NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
+    
+    var realTotalBytesString:NSString = ""
+    
+    func URLSession(session: NSURLSession,
+        downloadTask: NSURLSessionDownloadTask,
+        didWriteData bytesWritten: Int64,
+        totalBytesWritten: Int64,
+        totalBytesExpectedToWrite: Int64){
+            let response = downloadTask.response as NSHTTPURLResponse
+            self.realTotalBytesString = response.allHeaderFields["Tankuje-Len"] as NSString
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.progress.setProgress(Float(Double(totalBytesWritten) / Double(self.realTotalBytesString.intValue)), animated: true)
+            }
+            
+            print(totalBytesWritten)
+            print(" - ")
+            print(self.realTotalBytesString.intValue)
+            print(" - ")
+            println(self.progress.progress)
+    }
+    
+    func URLSession(session: NSURLSession,
+        downloadTask: NSURLSessionDownloadTask,
+        didFinishDownloadingToURL location: NSURL){
+            self.progress.progress = 1
+            let data = NSData(contentsOfURL: location)
+            var result = NSString(data: data!, encoding:
+                NSASCIIStringEncoding)!
+            let jsonData = result.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            let json = JSON(data: jsonData!)
+            
+            for (key: String, subJson: JSON) in json {
+                self.map.addMarker(subJson["lat"].double!, lng: subJson["lng"].double!, company_id: subJson["company_id"].string!)
+            }
+            //println("Finished writing the downloaded content to URL = \(location)")
+    }
+    
+    /* We now get to know that the download procedure was finished */
+    func URLSession(session: NSURLSession, task: NSURLSessionTask!,
+        didCompleteWithError error: NSError!){
+            
+            print("Finished ")
+            
+            if error == nil{
+                println("without an error")
+            } else {
+                println("with an error = \(error)")
+            }
+            
+            /* Release the delegate */
+            session.finishTasksAndInvalidate()
+            
+    }
+    
+    var session: NSURLSession!
+    var map: Map!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var navitem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var progress: UIProgressView!
     
     @IBOutlet weak var addressLine1: UILabel!
     @IBOutlet weak var addressLine2: UILabel!
@@ -24,31 +86,41 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // SETUP SESSION
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
+        self.session = session
+
+        // HIDE BOTTOM INFO BOX
         self.bottomViewHeight.constant = 0
         
+        // GOOGLE MAPS DELEGATE
         mapView.delegate = self
         
+        // LOCATION MANAGER DELEGATE
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        let map = Map(mapView: mapView)
-        map.fetchMarkers()
+        // INSTANTIATE MAP
+        self.map = Map(mapView: mapView)
+        self.map.fetchMarkers(session)
         
-        self.mapView.padding = UIEdgeInsets(top: navBar.frame.height, left: 0, bottom: bottomView.frame.height, right: 0)
-        
+        // SET LOGO TO NAVIGATION BAR
         let logo = UIImage(named: "logo.png")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.frame.size.height = 40
         navitem.titleView = imageView
         
+        // SEMI TRANSPARENT NAV
         navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navBar.shadowImage = UIImage()
         navBar.translucent = true
     }
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-        self.reverseGeocodeCoordinate(marker.position)
+        println(marker.userData)
+        self.reverseGeocodeCoordinate(marker)
 
         return false
     }
@@ -63,10 +135,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         }
     }
     
-    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {
+    func reverseGeocodeCoordinate(marker: GMSMarker) {
         let geocoder = GMSGeocoder()
         
-        geocoder.reverseGeocodeCoordinate(coordinate) { response , error in
+        geocoder.reverseGeocodeCoordinate(marker.position) { response , error in
             if let address = response?.firstResult() {
                 
                 let lines = address.lines as [String]
@@ -78,7 +150,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                     var newHeight = CGFloat(96)
                     
                     self.oilstationImage.contentMode = UIViewContentMode.ScaleAspectFit
-                    self.oilstationImage.image = UIImage(named: "orlen.png")
+                    self.oilstationImage.image = UIImage(named: marker.userData as String + ".png")
 //                    self.oilstationImage.alpha = 0.5
                     
                     self.bottomViewHeight.constant = newHeight
