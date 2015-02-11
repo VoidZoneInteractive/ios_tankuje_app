@@ -54,7 +54,6 @@ class Map {
         
         let request = NSMutableURLRequest(URL: url!)
         request.addValue("", forHTTPHeaderField: "Accept-Encoding")
-        request.HTTPMethod = "POST"
         
         let task = session.downloadTaskWithRequest(request)
         

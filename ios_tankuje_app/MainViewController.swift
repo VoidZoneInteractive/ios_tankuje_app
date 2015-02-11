@@ -11,6 +11,62 @@ import UIKit
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate,NSURLSessionDelegate,
 NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
+    // Interface Builder Outlets
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var navitem: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var progress: UIProgressView!
+    
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var navigationMenuButton: UIBarButtonItem!
+    
+    @IBOutlet weak var addressLine1: UILabel!
+    @IBOutlet weak var addressLine2: UILabel!
+    @IBOutlet weak var oilstationImage: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // SETUP SESSION
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
+        self.session = session
+        
+        // HIDE BOTTOM INFO BOX
+        self.bottomViewHeight.constant = 0
+        
+        // GOOGLE MAPS DELEGATE
+        mapView.delegate = self
+        
+        // LOCATION MANAGER DELEGATE
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        // INSTANTIATE MAP
+        self.map = Map(mapView: mapView)
+        self.map.fetchMarkers(session)
+        
+        // SET LOGO TO NAVIGATION BAR
+        let logo = UIImage(named: "logo.png")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.frame.size.height = 40
+        navitem.titleView = imageView
+        
+        // SET LOGO TO MENU BUTTON
+        let menuButtonImage = self.map.scaleImage(UIImage(named: "burger-menu.png")!, size: CGSizeMake(21, 21))
+        menuButton.setImage(menuButtonImage, forState: UIControlState.Normal)
+        
+        
+        // SEMI TRANSPARENT NAV
+        navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navBar.shadowImage = UIImage()
+        navBar.translucent = true
+    }
     
     var realTotalBytesString:NSString = ""
     
@@ -36,7 +92,14 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
     func URLSession(session: NSURLSession,
         downloadTask: NSURLSessionDownloadTask,
         didFinishDownloadingToURL location: NSURL){
-            self.progress.progress = 1
+
+            // Hide progress view
+            dispatch_async(dispatch_get_main_queue()) {
+                UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+                        self.progress.alpha = 0
+                    }, completion: { finished in
+                })
+            }
             let data = NSData(contentsOfURL: location)
             var result = NSString(data: data!, encoding:
                 NSASCIIStringEncoding)!
@@ -44,9 +107,11 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
             
             let json = JSON(data: jsonData!)
             
-            for (key: String, subJson: JSON) in json {
-                self.map.addMarker(subJson["lat"].double!, lng: subJson["lng"].double!, company_id: subJson["company_id"].string!)
-            }
+//            dispatch_async(dispatch_get_main_queue()) {
+                for (key: String, subJson: JSON) in json {
+                    self.map.addMarker(subJson["lat"].double!, lng: subJson["lng"].double!, company_id: subJson["company_id"].string!)
+                }
+//            }
             //println("Finished writing the downloaded content to URL = \(location)")
     }
     
@@ -69,54 +134,8 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
     
     var session: NSURLSession!
     var map: Map!
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var navitem: UINavigationItem!
-    @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var bottomViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var progress: UIProgressView!
-    
-    @IBOutlet weak var addressLine1: UILabel!
-    @IBOutlet weak var addressLine2: UILabel!
-    @IBOutlet weak var oilstationImage: UIImageView!
     
     let locationManager = CLLocationManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // SETUP SESSION
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
-        self.session = session
-
-        // HIDE BOTTOM INFO BOX
-        self.bottomViewHeight.constant = 0
-        
-        // GOOGLE MAPS DELEGATE
-        mapView.delegate = self
-        
-        // LOCATION MANAGER DELEGATE
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
-        // INSTANTIATE MAP
-        self.map = Map(mapView: mapView)
-        self.map.fetchMarkers(session)
-        
-        // SET LOGO TO NAVIGATION BAR
-        let logo = UIImage(named: "logo.png")
-        let imageView = UIImageView(image: logo)
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.frame.size.height = 40
-        navitem.titleView = imageView
-        
-        // SEMI TRANSPARENT NAV
-        navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navBar.shadowImage = UIImage()
-        navBar.translucent = true
-    }
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
         println(marker.userData)

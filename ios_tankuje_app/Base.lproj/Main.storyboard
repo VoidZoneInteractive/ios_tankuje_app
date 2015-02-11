@@ -11,7 +11,6 @@
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -42,15 +41,14 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem id="Swu-ch-iKX">
-                                        <barButtonItem key="leftBarButtonItem" id="uEI-QT-Txs">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DCk-49-68R">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="tZc-4R-3zR">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gMt-mv-uOy">
                                                 <rect key="frame" x="-23" y="-15" width="66" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </barButtonItem>
@@ -146,7 +144,9 @@
                         <outlet property="bottomView" destination="dHt-Xw-jn2" id="akb-nG-8Fy"/>
                         <outlet property="bottomViewHeight" destination="neJ-v7-Dse" id="kcN-mE-n0f"/>
                         <outlet property="mapView" destination="JCk-W2-1eT" id="6vW-0N-T60"/>
+                        <outlet property="menuButton" destination="gMt-mv-uOy" id="AT0-ER-nhI"/>
                         <outlet property="navBar" destination="epi-tX-MRR" id="haF-iy-akh"/>
+                        <outlet property="navigationMenuButton" destination="tZc-4R-3zR" id="Hiw-1N-Yrj"/>
                         <outlet property="navitem" destination="Swu-ch-iKX" id="8aM-xO-tib"/>
                         <outlet property="oilstationImage" destination="luu-zI-F1X" id="PP4-JC-4FI"/>
                         <outlet property="progress" destination="DcQ-bN-u4O" id="sya-Tf-AnM"/>
