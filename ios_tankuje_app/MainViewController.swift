@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate,NSURLSessionDelegate,
 NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
@@ -38,6 +39,8 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
         
         // HIDE BOTTOM INFO BOX
         self.bottomViewHeight.constant = 0
+        
+        
         
         // GOOGLE MAPS DELEGATE
         mapView.delegate = self
@@ -82,11 +85,11 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
                 self.progress.setProgress(Float(Double(totalBytesWritten) / Double(self.realTotalBytesString.intValue)), animated: true)
             }
             
-            print(totalBytesWritten)
-            print(" - ")
-            print(self.realTotalBytesString.intValue)
-            print(" - ")
-            println(self.progress.progress)
+//            print(totalBytesWritten)
+//            print(" - ")
+//            print(self.realTotalBytesString.intValue)
+//            print(" - ")
+//            println(self.progress.progress)
     }
     
     func URLSession(session: NSURLSession,
@@ -109,7 +112,7 @@ NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate {
             
 //            dispatch_async(dispatch_get_main_queue()) {
                 for (key: String, subJson: JSON) in json {
-                    self.map.addMarker(subJson["lat"].double!, lng: subJson["lng"].double!, company_id: subJson["company_id"].string!)
+                    self.map.addMarker(subJson)
                 }
 //            }
             //println("Finished writing the downloaded content to URL = \(location)")
